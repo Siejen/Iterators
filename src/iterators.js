@@ -45,7 +45,39 @@ var Iterators = (function() {
         }
       }
       return result;
+    },
+
+    reject: function( list, test ) {
+      var result = [];
+      for( var i = 0; i < list.length; i++ ) {
+        if( !test( list[i] ) ) {
+          result.push( list[i] );
+        }
+      }
+      return result;
+    },
+
+    reduce: function( list, combiner ) {
+      var reducedlist = [];
+      var result = null;
+      if( list.length === 0 ) { return result; }
+      if( list.length === 1 ) {
+        return list[0];
+      }
+
+      for( var i = 1; i < list.length; i+=2 ) {
+        var x = combiner( list[i], list[i-1] );
+        reducedlist.push( x );
+      }
+      if( i === list.length ) {
+         reducedlist.push( list[ list.length-1 ] );
+      }
+      if( list.length > 2 ) {
+        return Iterators.reduce( reducedlist, combiner );
+      }
+      return reducedlist[0];
     }
+
   }
   return api;
 })();

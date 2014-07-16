@@ -58,15 +58,40 @@ describe('Iterators', function(){
     })
   })
 
-  describe('#filter', function(){
+  describe('#map', function(){
 
     var squarer = function( x ) { return x*x; }
 
-    it('should return the legal ages', function(){
+    it('map should square the values', function(){
       var myArr = [ 1, 2, 3 ];
       expect(Iterators.map( myArr, squarer )).to.eql( [1, 4, 9] );
       expect(myArr).to.eql( [1, 2, 3] );
     })
   })
+
+
+  describe('#reduce', function(){
+
+    var adder = function( x, y ) { return x+y; }
+
+    it('should return the sum', function(){
+      var myArr = [ 1, 2, 3 ];
+      expect(Iterators.reduce( myArr, adder )).to.equal( 6 );
+      expect(myArr).to.eql( [1, 2, 3] );
+    })
+
+    it('should return the sum', function(){
+      var myArr = [ 1, 2 ];
+      expect(Iterators.reduce( myArr, adder )).to.equal( 3 );
+      expect(myArr).to.eql( [1, 2 ] );
+    })
+
+    it('should return the sum', function(){
+      var myArr = [ 1, 2, 3, 4 ];
+      expect(Iterators.reduce( myArr, adder )).to.equal( 10 );
+      expect(myArr).to.eql( [1, 2, 3, 4 ] );
+    })
+  })
+
 })
 
