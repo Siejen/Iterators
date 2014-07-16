@@ -1,0 +1,18 @@
+Phase I: 32 minutes.
+I already knew what each did in js, but that's because I had looked it up previously (lucky).
+
+Phase II: 29 minutes.
+not clear if it is meant for us to also do tests for each, map, and filter. It says to re-implement them, i.e. to write their implementation in the Iterators namespace. It does not explicitly say to write their tests, but perhaps that is implicit, i.e. by the first part of Phase II? Honestly not sure! Also, lucky that I had already grappled with the namespace notation, i.e. specifically that commas are used ... could've spent a while tracking that oddity down, but didn't.
+
+6 minutes to impl map, filter, each
+23 minutes to impl the tests
+29 minutes in totality (tests included)
+
+Phase III: 15 minutes
+
+reduce is much more tricky to impl.
+
+Phase IV: 4 minutes
+
+The goal of this was not clear. At first I thought why would I refactor when I have two results that I want. Then I thought o.k., I could use math.pow() or such like because I want squares and square roots, obviously that is just one function rather than a special purpose squarer and square rooter. Then I realized at last you wanted only one result. 
+ 
