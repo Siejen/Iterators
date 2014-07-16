@@ -58,7 +58,6 @@ var Iterators = (function() {
     },
 
     reduce: function( list, combiner ) {
-      // too complicated
       if( list.length === 0 ) { return null; }
 
       var result = list[0];
