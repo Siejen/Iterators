@@ -19,35 +19,34 @@ var Iterators = (function() {
         }
       };
       return min;
-    }
-  };
+    },
 
-  each: function( list, action ) {
-    for( var i = 0; i < list.length; i++ ) {
-      action( list[i] );
-    }
-    return list;
-  }
-
-  map: function( list, action ) {
-    var result = [];
-    for( var i = 0; i < list.length; i++ ) {
-      var x = action( list[i] );
-      result.push(x);
-    }
-    return result;
-  }
-
-  filter: function( list, test ) {
-    var result = [];
-    for( var i = 0; i < list.length; i++ ) {
-      if( test( list[i] ) ) {
-        result.push( list[i] );
+    each: function( list, action ) {
+      for( var i = 0; i < list.length; i++ ) {
+        action( list[i] );
       }
-    }
-    return result;
-  }
+      return list;
+    },
 
+    map: function( list, action ) {
+      var result = [];
+      for( var i = 0; i < list.length; i++ ) {
+        var x = action( list[i] );
+        result.push(x);
+      }
+      return result;
+    },
+
+    filter: function( list, test ) {
+      var result = [];
+      for( var i = 0; i < list.length; i++ ) {
+        if( test( list[i] ) ) {
+          result.push( list[i] );
+        }
+      }
+      return result;
+    }
+  }
   return api;
 })();
 

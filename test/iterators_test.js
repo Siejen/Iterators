@@ -1,6 +1,12 @@
 var expect = require('chai').expect,
   Iterators = require('../src/iterators.js');
 
+// var gte21 = function( x ) { return x >= 21; }
+// var myArr = [16, 18, 21, 32, 64 ];
+// console.log(myArr);
+// console.log(Iterators.filter( myArr, gte21 ));
+
+
 describe('Iterators', function(){
   describe('#max', function(){
     var myArr;
@@ -35,4 +41,32 @@ describe('Iterators', function(){
       expect(Iterators.min(myArr)).to.equal(-2.2);
     })    
   })
+
+  describe('#filter', function(){
+
+    var gte21 = function( x ) { return x >= 21; }
+
+    it('should return the legal ages', function(){
+      var myArr = [16, 18, 21, 32, 64 ];
+      expect(Iterators.filter( myArr, gte21 )).to.eql( [21, 32, 64] );
+      expect(myArr).to.eql( [16, 18, 21, 32, 64] );
+    })
+    it('should return the legal ages', function(){
+      var myArr = [1, 10, 100 ];
+      expect(Iterators.filter( myArr, gte21 )).to.eql( [100] );
+      expect(myArr).to.eql( [1, 10, 100] );
+    })
+  })
+
+  describe('#filter', function(){
+
+    var squarer = function( x ) { return x*x; }
+
+    it('should return the legal ages', function(){
+      var myArr = [ 1, 2, 3 ];
+      expect(Iterators.map( myArr, squarer )).to.eql( [1, 4, 9] );
+      expect(myArr).to.eql( [1, 2, 3] );
+    })
+  })
 })
+
