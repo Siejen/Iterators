@@ -59,24 +59,14 @@ var Iterators = (function() {
 
     reduce: function( list, combiner ) {
       // too complicated
-      var reducedlist = [];
-      var result = null;
-      if( list.length === 0 ) { return result; }
-      if( list.length === 1 ) {
-        return list[0];
-      }
+      if( list.length === 0 ) { return null; }
 
-      for( var i = 1; i < list.length; i+=2 ) {
-        var x = combiner( list[i], list[i-1] );
-        reducedlist.push( x );
+      var result = list[0];
+
+      for( var i = 1; i < list.length; i++ ) {
+        result = combiner( result, list[i] );
       }
-      if( i === list.length ) {
-         reducedlist.push( list[ list.length-1 ] );
-      }
-      if( list.length > 2 ) {
-        return Iterators.reduce( reducedlist, combiner );
-      }
-      return reducedlist[0];
+      return result;
     }
 
   }

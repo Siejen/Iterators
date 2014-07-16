@@ -91,6 +91,18 @@ describe('Iterators', function(){
       expect(Iterators.reduce( myArr, adder )).to.equal( 10 );
       expect(myArr).to.eql( [1, 2, 3, 4 ] );
     })
+
+    it('should return the sum', function(){
+      var myArr = [ 3 ];
+      expect(Iterators.reduce( myArr, adder )).to.equal( 3 );
+      expect(myArr).to.eql( [3] );
+    })
+
+    it('should return the sum', function(){
+      var myArr = [];
+      expect(Iterators.reduce( myArr, adder )).to.equal( null );
+      expect(myArr).to.eql( [] );
+    })
   })
 
 })
